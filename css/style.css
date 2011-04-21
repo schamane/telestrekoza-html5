@@ -165,15 +165,30 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 
 /**
- * Primary styles
- *
- * Author: 
- */
+*
+*	Begin Wordpress Styles.
+*
+**/
 
+/* A container for each post */
+article.post 
+{	
 
+}
+	section.post_title
+	{
 
+	}
+	section.post_content
+	{
+	
+	}
+	section.post_meta
+	{
+	
+	}
 
-
+	
 
 
 
