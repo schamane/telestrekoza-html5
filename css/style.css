@@ -161,8 +161,14 @@ body, select, input, textarea {
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
-h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1, h2, h3, h4, h5, h6 
+{ 
+    font-weight: bold; 
+}
 
+h1 { font-size: 1.3em; }
+h2 { font-size: 1.2em; }
+h3 { font-size: 1.1em; }
 
 
 
@@ -178,13 +184,62 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 **/
 
 
+
+/** Just enough layout to be usable out of the box. Using a 960px grid. **/
 #container 
 {
-	width: 960px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
 }
 
+#right_column
+{
+    
+}
+
+#left_column
+{
+    width: 600px;
+}
+
+#left_column article
+{
+    padding-bottom: 32px;
+}
+
+#page_list, #breadcrumbs
+{
+    margin-bottom: 16px;
+}
+
+
+.post_meta
+{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.post_meta 
+{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+p 
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+/* flatten lists in navigation menus */
+nav li
+{
+  display: inline;
+  list-style-type: none; 
+}
 
 /* posts on the index page */
 article.post 
@@ -203,6 +258,21 @@ article.post
 	{
 	
 	}
+
+
+
+
+
+/* pictures in posts */
+.caption 
+{
+
+}
+
+.alignleft 
+{
+    float: left;
+}
 
 	
 /**

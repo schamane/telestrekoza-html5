@@ -40,8 +40,20 @@
 <body>
 
   <div id="container">
+
+    <nav id="breadcrumbs">
+     
+    </nav>
+
     <header>
-		<h1><?php bloginfo('name'); ?></h1>
-		<h2><?php bloginfo('description'); ?></h2>
+	<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+	<h2><?php bloginfo('description'); ?></h2>
     </header>
+
+    <?php get_search_form(); ?>
+
+    <nav id="page_list">
+      <ul><?php wp_list_pages('title_li='); ?></ul>
+    </nav>
+
     <div id="main" role="main">
