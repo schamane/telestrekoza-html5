@@ -14,3 +14,38 @@ window.log = function(){
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
+(function( $ ){
+  $.fn.wpSidebar = function() {
+	children = [];	
+  	$(this).each(function() {
+  		var theAside = $(this);
+  		var theList = $(this).find('ul');
+  		if (theList.length !== 0) {
+	  		var theTitle = theAside.find("h3");
+	  		
+			theAside.css('clear','both');
+	  		theAside.wrap("<a href='javascript:;'/>");
+	  		theTitle.css('float','left').after("&nbsp;»");
+	  		
+			theList.css('clear', 'both');
+			theList.hide(); 		
+	  		
+	  		children.push(this);
+  		} else {
+  			theAside.before("<div class='clearfix'>&nbsp;</div>");
+  			
+  		}
+  	});
+  	
+  	
+  	$(this).click(function() {
+  		var hover_target = this;
+  		$(children).each(function() {
+  			if (this != hover_target) {
+  				$(this).find('ul').slideUp();
+  			}
+  		});
+  		$(hover_target).find('ul').slideDown();
+  	});
+  };
+})( jQuery );
