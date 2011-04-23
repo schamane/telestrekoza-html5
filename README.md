@@ -4,16 +4,18 @@ This is a Wordpress template aimed at being a starting point for personalised wo
 
 Development is currently underway. Expect a lot of instability.
 
-## Project Goals
+## Features
 
-The goal of this project is to create a Wordpress theme is the completely faithful to the latest version of the HTML5 specification. 
+* Faithful to the HTML5 specifaction.
+* Usable, out of the box.
+* Clean, self-documenting code. (In PHP, no less!)
+* Universal device and browser support. 
+* Hooked into WordPress' administration system. 
 
-This template attempts to be as cross-device and cross-browser as possible, by harnessing the powerful semantics of HTML5. To accomplish this, this project is a branch of the [HTML5 Boilerplate](https://github.com/paulirish/html5-boilerplate).
 
 ## Getting Started
 
-* */css*
-** */css/wordpress* Edit this CSS file to control styling.
+* */css/wordpress* Edit this CSS file to control styling.
 
 
  
