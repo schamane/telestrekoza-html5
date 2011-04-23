@@ -1,0 +1,114 @@
+/**
+*
+*	Begin Wordpress Styles.
+*
+**/
+
+.clearfix 
+{
+	clear: both;
+}
+
+/** Just enough layout to be usable out of the box. Using a 960px grid. **/
+#container, #header-container
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#right-column, #right-header
+{
+    float:left;
+    padding-left: 32px;
+    width:300px;
+}
+
+#left-column, #left-header
+{
+    width: 600px;
+    float: left;
+}
+
+#left-column article
+{
+    padding-bottom: 32px;
+}
+
+#page-list, #breadcrumbs, aside nav
+{
+    margin-bottom: 16px;
+}
+
+
+.post-meta
+{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+p
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.children
+{
+    margin-left: 8px;
+}
+
+/* flatten lists in navigation menus */
+header nav li
+{
+  display: inline;
+  list-style-type: none; 
+}
+
+/* posts on the index page */
+article.post 
+{	
+
+}
+	section.post-title
+	{
+
+	}
+	section.post-content
+	{
+	
+	}
+	section.post-meta
+	{
+	
+	}
+
+
+
+
+
+/* pictures in posts */
+.caption 
+{
+
+}
+
+.alignleft 
+{
+    float: left;
+}
+
+.alignright
+{
+	float: right;
+}
+
+
+	
+/**
+*
+*	End Wordpress Styles.
+*
+**/	
