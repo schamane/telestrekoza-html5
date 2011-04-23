@@ -1,15 +1,15 @@
 <?php while (have_posts()){ the_post(); ?>
     <article>
-	    <section class='post_title'>
+	    <section class='post-title'>
 	    <h3><a href="<?php the_permalink() ?>" 
 		   rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 	    </section>
 
-	     <section class='post_content'>
+	     <section class='post-content'>
 		      <?php the_content(); ?>
 	     </section>
 
-	     <section class='post_meta'>
+	     <section class='post-meta'>
 		     <?php if ( is_home() ): ?>
 		     <p><a href="<?php comments_link(); ?>">
 			   <?php comments_number('no comments','one comment','% comments'); ?>

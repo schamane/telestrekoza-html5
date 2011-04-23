@@ -9,6 +9,10 @@
 	clear: both;
 }
 
+
+
+
+
 /** Just enough layout to be usable out of the box. Using a 960px grid. **/
 #container, #header-container
 {
@@ -37,19 +41,19 @@
     padding-bottom: 32px;
 }
 
-#page-list, #breadcrumbs, aside nav
+#page-list, #breadcrumbs, aside section
 {
     margin-bottom: 16px;
 }
 
 
-.post-meta
+.post-meta, .commentlist li
 {
     margin-top: 16px;
     margin-bottom: 16px;
 }
 
-p
+p, .post-title
 {
     margin-top: 4px;
     margin-bottom: 4px;
@@ -57,17 +61,21 @@ p
 
 .children
 {
-    margin-left: 8px;
+}
+.children li
+{
+	padding-left: 16px;
 }
 
+
+
 /* flatten lists in navigation menus */
-header nav li
+header nav li, .commentlist, .children
 {
   display: inline;
   list-style-type: none; 
 }
 
-/* posts on the index page */
 article.post 
 {	
 
@@ -86,6 +94,10 @@ article.post
 	}
 
 
+.comment-awaiting-moderation
+{
+	color: #CC6600;
+}
 
 
 
