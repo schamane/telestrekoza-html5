@@ -12,10 +12,21 @@ Development is currently underway. Expect a lot of instability.
 * Universal device and browser support. 
 * Hooked into WordPress' administration system. 
 
+## Configuration Options
 
-## Getting Started
+Configuratble options for this theme are under the *Settings* tab in the Wordpress Administration area.
 
-* */css/wordpress* Edit this CSS file to control styling.
+* _Font style_ Options from Nathan Ford's (Revised Font Stacks)[http://www.awayback.com/revised-font-stack/]  
+* _Google Analytics tracker ID_ Automatic Google Analytics integration.
 
+Providing any of these will create a link on your blog's sidebar:
+
+* _Twitter user name_
+* _Facebook user name_
+* _Google user name_    
+
+# Theme Anatomy
+* */css/style.css* The base HTML5 Boilerplate CSS file. Includes CSS reset, mobile fixes, print display, etc...
+* */css/wordpress.css* All elements added to theme Wordpress are included in this file.
 
  

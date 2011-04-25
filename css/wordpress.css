@@ -1,19 +1,18 @@
-/**
-*
-*	Begin Wordpress Styles.
-*
-**/
-
+/* Wordpress generates these css classes and ids. */
 .clearfix 
 {
 	clear: both;
 }
+li ul {
+	margin: 0 !important;
+	padding: 0 !important;	
+}
+aside * ul { list-style-type: none; color: #666666; }
+.alignleft { float: left; }
+.alignright { float: right; }
 
 
-
-
-
-/** Just enough layout to be usable out of the box. Using a 960px grid. **/
+/* Basic two-column layout on a 960px grid */
 #container, #header-container
 {
     width: 960px;
@@ -22,51 +21,47 @@
     margin-top: 32px;
     margin-bottom: 32px;
 }
-
+#main, header {
+	margin-left: 16px;
+}
 #right-column, #right-header
 {
     float:left;
-    padding-left: 32px;
     width:300px;
+    margin-left: 32px;
 }
-
 #left-column, #left-header
 {
     width: 600px;
     float: left;
 }
-
 #left-column article
 {
-    padding-bottom: 32px;
+    margin-bottom: 32px;
 }
-
-#page-list, #breadcrumbs, aside section ul, .textwidget
+#page-list, #breadcrumbs, aside section ul, .textwidget, .tagcloud
 {
     margin-bottom: 16px;
 }
-
-
 .post-meta, .commentlist li
 {
     margin-top: 16px;
     margin-bottom: 16px;
 }
-
 p, .post-title
 {
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
-
 .children
 {
+	
 }
 .children li
 {
 	padding-left: 16px;
+	width: 200px;
 }
-
 
 
 /* flatten lists in navigation menus */
@@ -75,6 +70,9 @@ header nav li, .commentlist, .children
   display: inline;
   list-style-type: none; 
 }
+
+
+
 
 article.post 
 {	
@@ -93,7 +91,6 @@ article.post
 	
 	}
 
-
 .comment-awaiting-moderation
 {
 	color: #CC6600;
@@ -107,20 +104,5 @@ article.post
 
 }
 
-.alignleft 
-{
-    float: left;
-}
-
-.alignright
-{
-	float: right;
-}
 
 
-	
-/**
-*
-*	End Wordpress Styles.
-*
-**/	

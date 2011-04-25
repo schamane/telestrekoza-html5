@@ -24,7 +24,7 @@ window.log = function(){
 	  		var theTitle = theAside.find("h3");
 	  		
 			theAside.css('clear','both');
-	  		theAside.wrap("<a href='javascript:;'/>");
+	  		theTitle.wrapInner("<a href='javascript:;'/>");
 	  		theTitle.css('float','left').after("&nbsp;»");
 	  		
 			theList.css('clear', 'both');
@@ -48,4 +48,23 @@ window.log = function(){
   		$(hover_target).find('ul').slideDown();
   	});
   };
+  
+  $.fn.touchSidebar = function() {
+	children = [];	
+  	$(this).each(function() {
+  		var theAside = $(this);
+  		var theList = $(this).find('ul');
+  		if (theList.length !== 0) {
+	  		var theTitle = theAside.find("h3");
+	  		theList.find('li').css('margin-top', '16px');
+	  		theList.find('li').css('margin-bottom', '16px');
+	  		theList.find('li').css('list-style', 'none');
+	  		
+  		}
+  	});
+  };  
+  
+  
+  
+  
 })( jQuery );
