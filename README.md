@@ -16,7 +16,7 @@ Development is currently underway. Expect a lot of instability.
 
 Configuratble options for this theme are under the *Settings* tab in the Wordpress Administration area.
 
-* _Font style_ Options from Nathan Ford's (Revised Font Stacks)[http://www.awayback.com/revised-font-stack/]  
+* _Font style_ Options from Nathan Ford's [Revised Font Stacks](http://www.awayback.com/revised-font-stack/)  
 * _Google Analytics tracker ID_ Automatic Google Analytics integration.
 
 Providing any of these will create a link on your blog's sidebar:
