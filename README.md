@@ -10,6 +10,7 @@ Development is currently underway. Expect a lot of instability.
 * Usable, out of the box.
 * Clean, self-documenting code. (In PHP, no less!)
 * Universal device and browser support. 
+* Supports Wordpress' Widget system.
 * Hooked into WordPress' administration system. 
 
 ## Configuration Options

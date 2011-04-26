@@ -11,7 +11,6 @@ aside * ul { list-style-type: none; color: #666666; }
 .alignleft { float: left; }
 .alignright { float: right; }
 
-
 /* Basic two-column layout on a 960px grid */
 #container
 {
@@ -53,16 +52,11 @@ p, .post-title
     margin-top: 8px;
     margin-bottom: 8px;
 }
-.children
-{
-	
-}
 .children li
 {
 	padding-left: 16px;
 	width: 200px;
 }
-
 
 /* flatten lists in navigation menus */
 #header-container nav li, .commentlist, .children
@@ -70,19 +64,6 @@ p, .post-title
   display: inline;
   list-style-type: none; 
 }
-
-
-
-
-.post 
-{	
-
-}
-	.post-content
-	{
-	
-	}
-
 .comment-awaiting-moderation
 {
 	color: #CC6600;
@@ -90,11 +71,6 @@ p, .post-title
 
 
 
-/* pictures in posts */
-.caption 
-{
-
-}
 
 
 
