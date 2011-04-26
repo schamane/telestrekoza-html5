@@ -29,44 +29,43 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
 	
 	<style>
-	html, body, div, span, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-	small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, figcaption, figure,
-	footer, header, hgroup, menu, nav, section, summary,
-	time, mark, audio, video  
-	{ font-family: 
-		<?php 
-			$options = get_option('theme_options');
-			$optionValue =  $options['css_font_stack'];
-			
-			if ($optionValue == "Microsoft") {
-				?>"Segoe UI", Segoe, Tahoma, Geneva, sans-serif;<?php 
-			} elseif ($optionValue == "Yahoo") {
-				?>Arial, sans-serif;<?php 
-			} elseif ($optionValue == "I Love Typography") {
-				?>Cambria, Georgia, serif;<?php 
-			} elseif ($optionValue == "Jon Tangerine") {
-				?>Baskerville, Garamond, Palatino, "Palatino Linotype", "Hoefler Text", "Times New Roman", serif;<?php 
-			} elseif ($optionValue == "Sushi & Robots") {
-				?>"Hoefler Text", Garamond, Baskerville, "Baskerville Old Face", "Times New Roman", serif;<?php 
-			} else {
-				?>"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;<?php 
-			}
-		?> 
-	}
+		html, body, div, span, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+		small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, figcaption, figure,
+		footer, header, hgroup, menu, nav, section, summary,
+		time, mark, audio, video  
+		{ 
+	    	font-family: 
+			<?php 
+				$options = get_option('theme_options');
+				$optionValue =  $options['css_font_stack'];
+				
+				if ($optionValue == "Microsoft") {
+					?>"Segoe UI", Segoe, Tahoma, Geneva, sans-serif;<?php 
+				} elseif ($optionValue == "Yahoo") {
+					?>Arial, sans-serif;<?php 
+				} elseif ($optionValue == "I Love Typography") {
+					?>Cambria, Georgia, serif;<?php 
+				} elseif ($optionValue == "Jon Tangerine") {
+					?>Baskerville, Garamond, Palatino, "Palatino Linotype", "Hoefler Text", "Times New Roman", serif;<?php 
+				} elseif ($optionValue == "Sushi & Robots") {
+					?>"Hoefler Text", Garamond, Baskerville, "Baskerville Old Face", "Times New Roman", serif;<?php 
+				} else {
+					?>"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;<?php 
+				}
+			?> 
+		}
 	</style>
-
 
 	<!-- Wordpress functionality styled in this file. A lot of blank classes are defined therein. -->
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/wordpress.css">
 	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   
-	
 	<!-- Uncomment if you are specifically targeting less enabled mobile browsers
 	<link rel="stylesheet" media="handheld" href="<?php bloginfo('template_url'); ?>/css/handheld.css">  -->
 
@@ -75,19 +74,21 @@
 
 </head>
 <body>
-  <div id="container">
-    <nav id="breadcrumbs"></nav>
-	<header>
+	<div id="container">
+	    <nav id="breadcrumbs"></nav>
+	
 		<div id='header-container'>
 			<div id='left-header'>
-				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-				<h2><?php bloginfo('description'); ?></h2>
+				<hgroup>
+					<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+					<h2><?php bloginfo('description'); ?></h2>
+				</hgroup>
 			</div>
 	
 			<div id='right-header'>
 		        <?php get_search_form(); ?>
 			</div>
-
+	
 	 		<div class='clearfix'>
 				<nav id="top-page-list">
 					<ul><?php wp_list_pages('title_li='); ?></ul>
@@ -98,8 +99,5 @@
 				</nav>
 			</div>
 		</div>
-    </header>
-
-
-    <div id="main" role="main">
 	
+	    <div id="main" role="main">

@@ -13,7 +13,7 @@ aside * ul { list-style-type: none; color: #666666; }
 
 
 /* Basic two-column layout on a 960px grid */
-#container, #header-container
+#container
 {
     width: 960px;
     margin-left: auto;
@@ -21,8 +21,8 @@ aside * ul { list-style-type: none; color: #666666; }
     margin-top: 32px;
     margin-bottom: 32px;
 }
-#main, header {
-	margin-left: 16px;
+#main, #header-container {
+	padding-left: 16px;
 }
 #right-column, #right-header
 {
@@ -65,7 +65,7 @@ p, .post-title
 
 
 /* flatten lists in navigation menus */
-header nav li, .commentlist, .children
+#header-container nav li, .commentlist, .children
 {
   display: inline;
   list-style-type: none; 
@@ -74,19 +74,11 @@ header nav li, .commentlist, .children
 
 
 
-article.post 
+.post 
 {	
 
 }
-	section.post-title
-	{
-
-	}
-	section.post-content
-	{
-	
-	}
-	section.post-meta
+	.post-content
 	{
 	
 	}
