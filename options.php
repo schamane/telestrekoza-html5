@@ -1,23 +1,14 @@
-
 <?php
 /* Theme options, based on David Gwyer's implementation from http://www.presscoders.com/ */
 
 add_action('admin_init', 'theme_options_init' );
 add_action('admin_menu', 'theme_options_add_page');
 
-function add_defaults_fn() {
-	$tmp = get_option('theme_options');
-    if(($tmp['chkbox1']=='on')||(!is_array($tmp))) {
-		$arr = array("dropdown1"=>"Orange", "text_area" => "Space to put a lot of information here!", "text_string" => "Some sample text", "pass_string" => "123456", "chkbox1" => "", "chkbox2" => "on", "option_set1" => "Triangle");
-		update_option('theme_options', $arr);
-	}
-}
-
 function theme_options_init(){
-	//register_setting('plugin_options', 'plugin_options', 'plugin_options_validate' );
-	register_setting( 'theme_options', 'theme_options'); //, 'options_validation' );  
+	register_setting( 'theme_options', 'theme_options');
 	
 	add_settings_section('display_section', 'Display Settings', 'display_section_text', 'theme_options');
+	add_settings_field('disable_layout', 'Disable default style', 'disable_layout_setting', 'theme_options', 'display_section');
 	add_settings_field('css_font_stack', 'Font style', 'font_setting', 'theme_options', 'display_section');
 
 	add_settings_section('analytics_section', 'Analytics Settings', 'analytics_section_text', 'theme_options');
@@ -27,7 +18,6 @@ function theme_options_init(){
 	add_settings_field('twitter_id', 'Twitter user name', 'twitter_id_setting', 'theme_options', 'integration_section');
 	add_settings_field('facebook_id', 'Facebook user name', 'facebook_id_setting', 'theme_options', 'integration_section');
 	add_settings_field('google_id', 'Google user name', 'google_id_setting', 'theme_options', 'integration_section');
-	
 
 }
 
@@ -37,12 +27,11 @@ function theme_options_add_page() {
 }
 
 // ************************************************************************************************************
-
 // Callback functions
-
 // Section HTML, displayed before the first option
+
 function  display_section_text() {
-	echo '<p>Control the look and feel of your blog.</p>';
+	echo '<p>Control the look and feel of your blog, or disable the included styles.</p>';
 }
 function  analytics_section_text() {
 	echo '<p>Usage statistics.</p>';
@@ -51,11 +40,16 @@ function  integration_section_text() {
 	echo '<p>Enter your user name for any site you are a member of to create a link on the sidebar</p>';
 }
 
-// // DROP-DOWN-BOX - Name: plugin_options[dropdown1]
+
+
+// ************************************************************************************************************
+// sample setting render methods
+
+// // DROP-DOWN-BOX - Name: theme_options[dropdown1]
 // function  setting_dropdown_fn() {
-	// $options = get_option('plugin_options');
+	// $options = get_option('theme_options');
 	// $items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
-	// echo "<select id='drop_down1' name='plugin_options[dropdown1]'>";
+	// echo "<select id='drop_down1' name='theme_options[dropdown1]'>";
 	// foreach($items as $item) {
 		// $selected = ($options['dropdown1']==$item) ? 'selected="selected"' : '';
 		// echo "<option value='$item' $selected>$item</option>";
@@ -63,32 +57,32 @@ function  integration_section_text() {
 	// echo "</select>";
 // }
 // 
-// // TEXTAREA - Name: plugin_options[text_area]
+// // TEXTAREA - Name: theme_options[text_area]
 // function setting_textarea_fn() {
-	// $options = get_option('plugin_options');
-	// echo "<textarea id='plugin_textarea_string' name='plugin_options[text_area]' rows='7' cols='50' type='textarea'>{$options['text_area']}</textarea>";
+	// $options = get_option('theme_options');
+	// echo "<textarea id='plugin_textarea_string' name='theme_options[text_area]' rows='7' cols='50' type='textarea'>{$options['text_area']}</textarea>";
 // }
 // 
 
 // 
-// // PASSWORD-TEXTBOX - Name: plugin_options[pass_string]
+// // PASSWORD-TEXTBOX - Name: theme_options[pass_string]
 // function setting_pass_fn() {
-	// $options = get_option('plugin_options');
-	// echo "<input id='plugin_text_pass' name='plugin_options[pass_string]' size='40' type='password' value='{$options['pass_string']}' />";
+	// $options = get_option('theme_options');
+	// echo "<input id='plugin_text_pass' name='theme_options[pass_string]' size='40' type='password' value='{$options['pass_string']}' />";
 // }
 // 
-// // CHECKBOX - Name: plugin_options[chkbox1]
+// // CHECKBOX - Name: theme_options[chkbox1]
 // function setting_chk1_fn() {
-	// $options = get_option('plugin_options');
+	// $options = get_option('theme_options');
 	// if($options['chkbox1']) { $checked = ' checked="checked" '; }
-	// echo "<input ".$checked." id='plugin_chk1' name='plugin_options[chkbox1]' type='checkbox' />";
+	// echo "<input ".$checked." id='plugin_chk1' name='theme_options[chkbox1]' type='checkbox' />";
 // }
 // 
-// // CHECKBOX - Name: plugin_options[chkbox2]
+// // CHECKBOX - Name: theme_options[chkbox2]
 // function setting_chk2_fn() {
-	// $options = get_option('plugin_options');
+	// $options = get_option('theme_options');
 	// if($options['chkbox2']) { $checked = ' checked="checked" '; }
-	// echo "<input ".$checked." id='plugin_chk2' name='plugin_options[chkbox2]' type='checkbox' />";
+	// echo "<input ".$checked." id='plugin_chk2' name='theme_options[chkbox2]' type='checkbox' />";
 // }
 
 
@@ -103,21 +97,25 @@ function font_setting() {
 }
 function ga_tracker_setting() {
 	$options = get_option('theme_options');
-	echo "<input id='plugin_text_string' name='theme_options[ga_tracker]' size='40' type='text' value='{$options['ga_tracker']}' />";
+	echo "<input id='ga_tracker' name='theme_options[ga_tracker]' size='40' type='text' value='{$options['ga_tracker']}' />";
 }
 function twitter_id_setting() {
 	$options = get_option('theme_options');
-	echo "<input id='plugin_text_string' name='theme_options[twitter_id]' size='40' type='text' value='{$options['twitter_id']}' />";
+	echo "<input id='twitter_id' name='theme_options[twitter_id]' size='40' type='text' value='{$options['twitter_id']}' />";
 }
 function facebook_id_setting() {
 	$options = get_option('theme_options');
-	echo "<input id='plugin_text_string' name='theme_options[facebook_id]' size='40' type='text' value='{$options['facebook_id']}' />";
+	echo "<input id='facebook_id' name='theme_options[facebook_id]' size='40' type='text' value='{$options['facebook_id']}' />";
 }
 function google_id_setting() {
 	$options = get_option('theme_options');
-	echo "<input id='plugin_text_string' name='theme_options[google_id]' size='40' type='text' value='{$options['google_id']}' />";
+	echo "<input id='google_id' name='theme_options[google_id]' size='40' type='text' value='{$options['google_id']}' />";
 }
-
+function disable_layout_setting() {
+	$options = get_option('theme_options');
+	if($options['disable_layout']) { $checked = ' checked="checked" '; }
+	echo "<input ".$checked." id='use_layout' name='theme_options[disable_layout]' type='checkbox' />";
+}
 
 
 // Display the admin options page
@@ -137,9 +135,3 @@ function options_page_fn() {
 <?php
 }
 
-// Validate user data for some/all of your input fields
-function options_validation($input) {
-	// Check our textbox option field contains no HTML tags - if so strip them out
-	$input['text_string'] =  wp_filter_nohtml_kses($input['text_string']);	
-	return $input; // return validated input
-}

@@ -23,7 +23,7 @@
 		
 				     <p><small>Categories: <?php the_category(', '); ?></small></p>
 				     <p><small><?php the_tags(); ?></small></p>
-				     <p><small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small></p>
+				     <p><small><time><?php the_time('F jS, Y') ?></time> by <?php the_author_posts_link() ?></small></p>
 				</div>
 		    </footer>
 		</div>
