@@ -10,26 +10,27 @@
 	        number_format_i18n( get_comments_number() ), '<cite>' . get_the_title() . '</cite>' );
 	        ?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'twentyten' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
-			</div> <!-- .navigation -->
-		<?php endif; // check for comment navigation ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav>
+				<div class="navigation">
+					<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
+				</div> 
+			</nav>
+		<?php endif; ?>
 		
 		<ol class="commentlist">
-			<?php
-				wp_list_comments();
-			?>
+			<?php wp_list_comments(); ?>
 		</ol>
 		
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'twentyten' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
-			</div><!-- .navigation -->
-		<?php endif; // check for comment navigation ?>
-		
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav>
+				<div class="navigation">
+					<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments') ); ?></div>
+					<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>') ); ?></div>
+				</div>
+			</nav>
+		<?php endif; ?>
 
 		<?php else : // or, if we don't have comments:
 			if ( ! comments_open() ) : ?>
@@ -39,5 +40,12 @@
 		<?php endif; // end have_comments() ?>
 		
 		<?php comment_form(); ?>
+
+
+	
+
+
+
+
 	</section>
 </div>

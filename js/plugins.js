@@ -64,7 +64,19 @@ window.log = function(){
   	});
   };  
   
-  
-  
+    
+  $.fn.markTerm = function() {
+  	var markText = $("mark").text();
+  	$(".post-content").each(function(){
+  		var searchText = $(this).html();
+		var loc = searchText.indexOf(markText);
+		var head = searchText.substring(0,loc);
+		var tail = searchText.substring(loc + markText.length)
+		
+		$(this).html(head + "<mark>" + markText + "</mark>" + tail);
+		
+	});
+  };  
+  	
   
 })( jQuery );

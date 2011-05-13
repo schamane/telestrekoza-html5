@@ -3,7 +3,7 @@
 		<div class='post'>
 		    <header>
 				<div class='post-header'>
-				    <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+				    <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 		    	</div>
 			</header>
 	
@@ -23,7 +23,7 @@
 		
 				     <p><small>Categories: <?php the_category(', '); ?></small></p>
 				     <p><small><?php the_tags(); ?></small></p>
-				     <p><small><time><?php the_time('F jS, Y') ?></time> by <?php the_author_posts_link() ?></small></p>
+				     <p><small><time><?php the_time('F jS, Y') ?></time> by <address><?php the_author_posts_link() ?></address></small></p>
 				</div>
 		    </footer>
 		</div>

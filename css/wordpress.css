@@ -97,6 +97,13 @@ p, .post-header
 
 
 
+/* comment form */
+#respond { 
+	margin-top: 16px;
+}
+#commentform p input, #commentform p textarea {
+	display: block;	
+}
 
 
 
