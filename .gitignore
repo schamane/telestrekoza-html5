@@ -29,6 +29,7 @@ dwsync.xml
 # Folders to ignore
 .hg
 .svn
+intermediate
 publish
 .idea
 
