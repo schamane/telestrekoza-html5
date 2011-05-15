@@ -19,9 +19,7 @@
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
-	<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/apple-touch-icon.png">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
 	<!-- CSS: implied media="all" -->  
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
@@ -68,14 +66,12 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/wordpress.css">
 	<?php } ?>	
 
-
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   
-	<!-- Uncomment if you are specifically targeting less enabled mobile browsers
-	<link rel="stylesheet" media="handheld" href="<?php bloginfo('template_url'); ?>/css/handheld.css">  -->
-
-	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<!-- All JavaScript at the bottom, except for Modernizr and Respond.
+		 Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
 	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-1.7.min.js"></script>
+	<script src='<?php bloginfo('template_url'); ?>/js/libs/respond.min.js'></script>
 
 </head>
 <body>
