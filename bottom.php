@@ -5,7 +5,7 @@
 	
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
-	<script>window.jQuery || document.write("<script src='<?php bloginfo('template_url'); ?>/js/libs/jquery-1.6.min.js'>\x3C/script>")</script>
+	<script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery-1.6.min.js">\x3C/script>')</script>
 
 	<!-- scripts concatenated and minified via ant build script-->
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>

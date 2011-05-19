@@ -4,12 +4,6 @@ The theme developer's WordPress theme.
 
 __Development is currently underway. Expect a lot of instability.__
 
-## Why should I care?
-
-This theme isn't just some unstyled version of the WordPress default theme! It represents a careful
-rethinking of blog markup structure and presentation in the HTML5/jQuery world we live in. It aims to
-be the starting point for all ambitious experiments in themeatic development. It draws it's power from
-the HTML5 Boilerplate. Calling this thing barebones is a little insulting, really. Think __hackable.__ 
 
 ## Features
 
@@ -21,6 +15,16 @@ the HTML5 Boilerplate. Calling this thing barebones is a little insulting, reall
 * Universal device and browser support. 
 * Supports Wordpress' Widget system.
 * Hooked into WordPress' administration system. 
+
+#### top.php & bottom.php
+<ul>
+	<li>We use a <a href="http://paulirish.com/2010/the-protocol-relative-url/">protocol-relative url</a> for the jQuery include, to prevent the mixed content warning.</li>
+	<li>The order of <code>&lt;meta></code> tags, <code>&lt;title></code>, and charset has been <a href="https://github.com/paulirish/html5-boilerplate/wiki/The-markup">documented more extensively now</a>. TL;DR: You are <a href="https://github.com/paulirish/html5-boilerplate/commit/4b67ea5cabb8c2b75faf2e255344cdffdf190464">safe to use the boilerplate's order of tags</a>.</li>
+	<li>We've shortened up the Google Analytics snippet.</li>
+	<li>Added an ARIA <code>role</code> attribute to <code>div#main</code>. This assumes your main content goes within that container.</li>
+	<li>IE9 doesn't get it's own conditional class! Yay!</li>		
+</ul>
+
 
 ## What else is there?
 
