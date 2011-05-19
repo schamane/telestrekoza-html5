@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-#Generate a new project from your HTML5 Boilerplate repo clone
-#by: Rick Waldron & Michael Cetrulo
+#Generate a new wordpress theme
 
+#originally by: Rick Waldron & Michael Cetrulo
+#modified by Matt Vears
 
 ##first run
 # $ cd  html5-boilerplate/build
@@ -42,7 +43,7 @@ else
     echo "Created Directory: $dst"
 
     cd -- "$src"
-    cp -vr -- css js img build test *.html *.xml *.txt *.png *.ico .htaccess "$dst"
+    cp -vr -- css js img build test *.html *.php *.css *.xml *.txt *.png *.ico .htaccess "$dst"
 
     #sucess message
     echo "Created Project: $dst"
