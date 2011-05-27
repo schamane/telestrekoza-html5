@@ -1,3 +1,4 @@
+<section role='main'>
 <?php while (have_posts()){ the_post(); ?>
     <article id='post-<?php the_ID(); ?>'>
 		<div class='post'>
@@ -29,3 +30,4 @@
 		</div>
     </article>
 <?php } ?>
+</section>

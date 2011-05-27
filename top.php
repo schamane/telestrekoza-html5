@@ -81,23 +81,25 @@
 
 			<div id='header-container'>
 				<div id='left-header'>
-					<hgroup>
+					<hgroup role='banner'>
 						<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 						<h2><?php bloginfo('description'); ?></h2>
 					</hgroup>
 				</div>
 		
 				<div id='right-header'>
-			        <?php get_search_form(); ?>
+					<section role='search'>
+			        	<?php get_search_form(); ?>
+			        </section>
 				</div>
 				
 		 		<div id='top-nav-container' class='clearfix'>
-					<section>
+					<section role='menubar'>
 						<div id='nav-menu'>
 							<?php wp_nav_menu(); ?>
 						</div>	
 					</section>	
-					<nav>
+					<nav role='navigation'>
 						<div id='top-pagination'>
 						    <?php next_posts_link('&laquo; Previous Page') ?>
 						    <?php previous_posts_link('Next Page &raquo;') ?>

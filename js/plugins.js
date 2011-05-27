@@ -15,68 +15,6 @@ window.log = function(){
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 (function( $ ){
-  $.fn.wpSidebar = function() {
-	children = [];	
-  	$(this).each(function() {
-  		var theAside = $(this);
-  		var theList = $(this).find('ul');
-  		if (theList.length !== 0) {
-	  		var theTitle = theAside.find("h3");
-	  		
-			theAside.css('clear','both');
-	  		theTitle.wrapInner("<a href='javascript:;'/>");
-	  		theTitle.css('float','left').after("&nbsp;»");
-	  		
-			theList.css('clear', 'both');
-			theList.hide(); 		
-	  		
-	  		children.push(this);
-  		} else {
-  			theAside.before("<div class='clearfix'>&nbsp;</div>");
-  			
-  		}
-  	});
-  	
-  	
-  	$(this).click(function() {
-  		var hover_target = this;
-  		$(children).each(function() {
-  			if (this != hover_target) {
-  				$(this).find('ul').slideUp();
-  			}
-  		});
-  		$(hover_target).find('ul').slideDown();
-  	});
-  };
-  
-  $.fn.touchSidebar = function() {
-	children = [];	
-  	$(this).each(function() {
-  		var theAside = $(this);
-  		var theList = $(this).find('ul');
-  		if (theList.length !== 0) {
-	  		var theTitle = theAside.find("h3");
-	  		theList.find('li').css('margin-top', '16px');
-	  		theList.find('li').css('margin-bottom', '16px');
-	  		theList.find('li').css('list-style', 'none');
-	  		
-  		}
-  	});
-  };  
-  
-    
-  $.fn.markTerm = function() {
-  	var markText = $("mark").text();
-  	$(".post-content").each(function(){
-  		var searchText = $(this).html();
-		var loc = searchText.indexOf(markText);
-		var head = searchText.substring(0,loc);
-		var tail = searchText.substring(loc + markText.length)
-		
-		$(this).html(head + "<mark>" + markText + "</mark>" + tail);
-		
-	});
-  };  
-  	
+ 
   
 })( jQuery );

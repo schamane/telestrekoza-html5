@@ -1,10 +1,12 @@
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
-
-	<?php endif; ?>
-
+	<aside>
+		<section role='navigation'>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+			<?php endif; ?>
+		</section>
+	</aside>
 
 	<aside>
-		<section id='integration'>
+		<section id='integration' role='list'>
 			<?php $options = get_option('theme_options');
 				$twitterId =  $options['twitter_id'];
 				$facebookId =  $options['facebook_id'];
