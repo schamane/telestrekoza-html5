@@ -1,9 +1,18 @@
 #  HTML5 Boilerplate (Wordpress Barebones Remix)
 
-The theme developer's WordPress theme.
+The HTML5 Boilerplate attempts to be an ideal starting point for web designers and developers, combining the Internets collected knowledge into one easy to use package. This theme attempts to be the ideal starting point for WordPress users who are interested in rapid development with up-to-date technologies.
 
-__Development is currently underway. Expect a lot of instability.__
+<b>Installing:</b>
+In your wordpress <code>themes</code> directory, execute the follow command:
+<code>
+git clone git://github.com/mattvears/html5-wordpress-boilerplate.git
+</code>
 
+<b>More Info</b>
+
+For the technical details, read the <a href="https://github.com/mattvears/html5-wordpress-boilerplate/wiki/Technical-Specification">technicical specification</a>.
+
+For project updates, read the <a href="http://vears.net/boilerplate/">blog</a>
 
 ## Features
 
@@ -15,16 +24,7 @@ __Development is currently underway. Expect a lot of instability.__
 * Universal device and browser support. 
 * Supports Wordpress' Widget system.
 * Hooked into WordPress' administration system. 
-
-#### top.php & bottom.php
-<ul>
-	<li>We use a <a href="http://paulirish.com/2010/the-protocol-relative-url/">protocol-relative url</a> for the jQuery include, to prevent the mixed content warning.</li>
-	<li>The order of <code>&lt;meta></code> tags, <code>&lt;title></code>, and charset has been <a href="https://github.com/paulirish/html5-boilerplate/wiki/The-markup">documented more extensively now</a>. TL;DR: You are <a href="https://github.com/paulirish/html5-boilerplate/commit/4b67ea5cabb8c2b75faf2e255344cdffdf190464">safe to use the boilerplate's order of tags</a>.</li>
-	<li>We've shortened up the Google Analytics snippet.</li>
-	<li>Added an ARIA <code>role</code> attribute to <code>div#main</code>. This assumes your main content goes within that container.</li>
-	<li>IE9 doesn't get it's own conditional class! Yay!</li>		
-</ul>
-
+* ARIA roles included for accessibility.
 
 ## What else is there?
 
