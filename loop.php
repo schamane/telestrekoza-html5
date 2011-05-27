@@ -1,6 +1,6 @@
 <section role='main'>
 <?php while (have_posts()){ the_post(); ?>
-    <article id='post-<?php the_ID(); ?>'>
+    <article id='post-<?php the_ID(); ?>' role='article'>
 		<div class='post'>
 		    <header>
 				<div class='post-header'>
