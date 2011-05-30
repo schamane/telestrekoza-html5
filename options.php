@@ -11,11 +11,15 @@ function theme_options_init(){
 	add_settings_field('disable_layout', 'Disable default style', 'disable_layout_setting', 'theme_options', 'display_section');
 	add_settings_field('css_font_stack', 'Font style', 'font_setting', 'theme_options', 'display_section');
 
+	add_settings_section('media_section', 'Media Settings', 'media_section_text', 'theme_options');
+	add_settings_field('yahoo_media_player', 'Yahoo Media Player', 'yahoo_media_player_setting', 'theme_options', 'media_section');
+
 	add_settings_section('analytics_section', 'Analytics Settings', 'analytics_section_text', 'theme_options');
 	add_settings_field('ga_tracker', 'Google Analytics tracker ID', 'ga_tracker_setting', 'theme_options', 'analytics_section');
-
+	
 	add_settings_section('facebook_section', 'Facebook Integration', 'facebook_integration_section_text', 'theme_options');
 	add_settings_field('facebook_profile_id', 'Facebook profile ID', 'facebook_profile_id_setting', 'theme_options', 'facebook_section');
+	
 	
 	add_settings_section('integration_section', 'Profile Links', 'integration_section_text', 'theme_options');
 	add_settings_field('twitter_id', 'Twitter user name', 'twitter_id_setting', 'theme_options', 'integration_section');
@@ -38,6 +42,9 @@ function  display_section_text() {
 }
 function  analytics_section_text() {
 	echo '<p>Usage statistics.</p>';
+}
+function  media_section_text() {
+	echo "<p>Media utilities and librarys.</p>";
 }
 function  integration_section_text() {
 	echo '<p>Enter your user name for any site you are a member of to create a link on the sidebar</p>';
@@ -126,7 +133,11 @@ function disable_layout_setting() {
 	if($options['disable_layout']) { $checked = ' checked="checked" '; }
 	echo "<input ".$checked." id='use_layout' name='theme_options[disable_layout]' type='checkbox' />";
 }
-
+function yahoo_media_player_setting() {
+	$options = get_option('theme_options');
+	if($options['yahoo_media_player']) { $checked = ' checked="checked" '; }
+	echo "<input ".$checked." id='yahoo_media_player' name='theme_options[yahoo_media_player]' type='checkbox' />";
+}
 
 // Display the admin options page
 function options_page_fn() {

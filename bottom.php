@@ -7,6 +7,15 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery-1.6.min.js">\x3C/script>')</script>
 
+
+	<?php
+		// You can disable the included style quickly from the settings page,
+		$options = get_option('theme_options');
+		if ($options['yahoo_media_player'])	{
+	?>
+		<script src="http://mediaplayer.yahoo.com/js"></script>	
+	<?php } ?>
+
 	<!-- scripts concatenated and minified via ant build script-->
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>

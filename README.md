@@ -29,7 +29,7 @@ For project updates, read the <a href="http://vears.net/boilerplate/">blog</a>
 
 ## What else is there?
 
-jQuery, Google Analytics, Modernizr, QUnit, Chrome Frame, etc.
+jQuery, Google Analytics, Modernizr, QUnit, Chrome Frame, Yahoo Media Player, etc.
 
 ## Configuration options
 
