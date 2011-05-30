@@ -9,18 +9,17 @@
 
 
 	<?php
-		// You can disable the included style quickly from the settings page,
 		$options = get_option('theme_options');
 		if ($options['yahoo_media_player'])	{
 	?>
-		<script src="http://mediaplayer.yahoo.com/js"></script>	
+	<script src="http://mediaplayer.yahoo.com/js"></script>	
 	<?php } ?>
 
 	<!-- scripts concatenated and minified via ant build script-->
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
 	<!-- end scripts-->
-
+	
 	<!-- Configure Google Analytics in the Theme Settings in the WP administration interface. -->
 	<?php
 		$opt = get_option('theme_options');
