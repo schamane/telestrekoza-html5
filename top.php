@@ -16,6 +16,28 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="author" content="<?php bloginfo('admin_email'); ?>">
 	
+	<!-- The Open Graph protocol enables any web page to become a rich object in a social graph. http://ogp.me/ -->
+	<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+	<meta property="og:description" content="<?php bloginfo('description'); ?>" />
+	<meta property="og:image" content="<?php bloginfo('template_url'); ?>/apple-touch-icon.png" />
+
+	<!-- Consult this list of types: http://ogp.me/#types -->
+	<meta property="og:type" content="blog" /> 
+	
+	<?php 
+		$options = get_option('theme_options'); 
+		$facebookProfileId =  $options['facebook_profile_id']; 
+		if (!is_null($facebookProfileId) && !empty($facebookProfileId)) { 
+	?>
+		<meta property="fb:admins" content="<?php echo $facebookProfileId; ?>" />
+	<?php } ?>
+
+	
+	<?php if (is_single()) { ?> 
+		<meta property="og:title" content="<?php the_title(); ?>" />
+		<meta property="og:url" content="<?php the_permalink() ?>" />
+	<?php } ?>
+
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	

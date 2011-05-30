@@ -14,9 +14,12 @@ function theme_options_init(){
 	add_settings_section('analytics_section', 'Analytics Settings', 'analytics_section_text', 'theme_options');
 	add_settings_field('ga_tracker', 'Google Analytics tracker ID', 'ga_tracker_setting', 'theme_options', 'analytics_section');
 
-	add_settings_section('integration_section', 'Integration Settings', 'integration_section_text', 'theme_options');
+	add_settings_section('facebook_section', 'Facebook Integration', 'facebook_integration_section_text', 'theme_options');
+	add_settings_field('facebook_profile_id', 'Facebook profile ID', 'facebook_profile_id_setting', 'theme_options', 'facebook_section');
+	
+	add_settings_section('integration_section', 'Profile Links', 'integration_section_text', 'theme_options');
 	add_settings_field('twitter_id', 'Twitter user name', 'twitter_id_setting', 'theme_options', 'integration_section');
-	add_settings_field('facebook_id', 'Facebook user name', 'facebook_id_setting', 'theme_options', 'integration_section');
+	add_settings_field('facebook_id', 'Facebook user name', 'facebook_id_setting', 'theme_options', 'integration_section');	
 	add_settings_field('google_id', 'Google user name', 'google_id_setting', 'theme_options', 'integration_section');
 
 }
@@ -39,7 +42,10 @@ function  analytics_section_text() {
 function  integration_section_text() {
 	echo '<p>Enter your user name for any site you are a member of to create a link on the sidebar</p>';
 }
-
+function  facebook_integration_section_text() {
+	echo "<p>This information is used for Open Graph and Facebook integration (ie, the 'like' button.)</p>";
+	echo "<p>Find your profile ID with this tool: <a href='http://graph.facebook.com/USER_NAME'><b>http://graph.facebook.com/<em>USER_NAME</em></b></p></a>";
+}
 
 
 // ************************************************************************************************************
@@ -106,6 +112,10 @@ function twitter_id_setting() {
 function facebook_id_setting() {
 	$options = get_option('theme_options');
 	echo "<input id='facebook_id' name='theme_options[facebook_id]' size='40' type='text' value='{$options['facebook_id']}' />";
+}
+function facebook_profile_id_setting() {
+	$options = get_option('theme_options');
+	echo "<input id='facebook_profile_id' name='theme_options[facebook_profile_id]' size='40' type='text' value='{$options['facebook_profile_id']}' />";
 }
 function google_id_setting() {
 	$options = get_option('theme_options');

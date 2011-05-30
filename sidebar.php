@@ -12,7 +12,7 @@
 				$facebookId =  $options['facebook_id'];
 				$googleId =  $options['google_id'];
 			?>
-		
+
 			<h3>Other Sites</h3>
 			<ul>
 			<?	if (!is_null($twitterId) && !empty($twitterId)) { ?>

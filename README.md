@@ -25,6 +25,7 @@ For project updates, read the <a href="http://vears.net/boilerplate/">blog</a>
 * Supports Wordpress' Widget system.
 * Hooked into WordPress' administration system. 
 * ARIA roles included for accessibility.
+* Open Graph protocol included for social network integration.
 
 ## What else is there?
 
