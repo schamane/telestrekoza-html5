@@ -15,7 +15,7 @@ When you are ready to release your site to production, run the build script:
 
 https://github.com/mattvears/html5-wordpress-boilerplate/wiki/Build-script
 
-<b>More Info</b>
+## Documentation
 
 For the technical details, read the <a href="https://github.com/mattvears/html5-wordpress-boilerplate/wiki/Technical-Specification">technicical specification</a>.
 
