@@ -1,12 +1,19 @@
-#  HTML5 Boilerplate (Wordpress Barebones Remix)
+#  HTML5 Boilerplate (WordPress remix)
 
 The HTML5 Boilerplate attempts to be an ideal starting point for web designers and developers, combining the Internets collected knowledge into one easy to use package. This theme attempts to be the ideal starting point for WordPress users who are interested in rapid development with up-to-date technologies.
 
-<b>Installing:</b>
+## Installing
 In your wordpress <code>themes</code> directory, execute the follow command:
+
 <code>
 git clone git://github.com/mattvears/html5-wordpress-boilerplate.git
 </code>
+
+## The build script
+
+When you are ready to release your site to production, run the build script: 
+
+https://github.com/mattvears/html5-wordpress-boilerplate/wiki/Build-script
 
 <b>More Info</b>
 

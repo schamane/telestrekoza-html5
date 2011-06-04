@@ -548,13 +548,22 @@
 
         <echo message="Update the HTML to reference our concatenated script file: ${scripts.js}"/>
         <!-- style.css replacement handled as a replacetoken above -->
-        <replaceregexp match="&lt;!-- scripts concatenated [\d\w\s\W]*?!-- end ((scripts)|(concatenated and minified scripts))--&gt;" replace="&lt;script src='${scripts.js}\'&gt;&lt;/script&gt;" flags="m">
+        <replaceregexp match="&lt;!-- scripts concatenated [\d\w\s\W]*?!-- end ((scripts)|(concatenated and minified scripts))--&gt;" replace="&lt;script src='&lt;?php bloginfo('template_url'); ?&gt;/${scripts.js}\'&gt;&lt;/script&gt;" flags="m">
             <fileset dir="./${dir.intermediate}" includes="${page-files}"/>
         </replaceregexp>
         <!--[! use comments like this one to avoid having them get minified -->
 
-        <echo message="Updating the HTML with the new css filename: ${style.css}"/>
-        <replace token="href=&quot;${dir.css}/style.css&quot;" value="href=&quot;${style.css}&quot;" dir="${dir.intermediate}" includes="${page-files}"/>
+        <echo message="Updating '/${dir.css}/style.css' with '${style.css}'"/>
+        <replace token="/${dir.css}/style.css" value="/${style.css}" dir="${dir.intermediate}">
+    		<include name="**/*"/>
+        </replace>
+        
+        <echo message="Updating '/${dir.css}/wordpress.css' with '${wordpress.style.css}'"/>
+        <replace token="/${dir.css}/wordpress.css" value="/${wordpress.style.css}" dir="${dir.intermediate}">
+    		<include name="**/*"/>
+        </replace>
+        
+        
     </target>
     
     
@@ -564,7 +573,10 @@
         <echo message=" - removing html comments"/>
         <echo message=" - compressing inline style/script tag contents"/>
         <apply executable="java" parallel="false" dest="./${dir.publish}/" >
-            <fileset dir="./${dir.intermediate}/" includes="${page-files}"/>
+            <fileset dir="./${dir.intermediate}/" includes="${page-files}">
+        		<exclude name="**/top.php"/>
+        		<exclude name="**/bottom.php"/>
+            </fileset>
             <arg value="-jar"/>
             <arg path="./${dir.build.tools}/${tool.htmlcompressor}"/>
             <arg line="--preserve-multi-spaces"/>
@@ -577,6 +589,8 @@
             <mapper type="glob" from="*" to="../${dir.publish}/*"/>
             <targetfile/>
         </apply>
+		<copy file="./${dir.intermediate}/top.php" todir="./${dir.publish}/"/>
+		<copy file="./${dir.intermediate}/bottom.php" todir="./${dir.publish}/"/>
     </target>
     
     
@@ -586,7 +600,10 @@
         <echo message=" - retain html comments"/>
         <echo message=" - compressing inline style/script tag contents"/>
         <apply executable="java" parallel="false" dest="./${dir.publish}/" >
-            <fileset dir="./${dir.intermediate}/" includes="${page-files}"/>
+            <fileset dir="./${dir.intermediate}/" includes="${page-files}">
+        		<exclude name="**/top.php"/>
+        		<exclude name="**/bottom.php"/>
+            </fileset>
             <arg value="-jar"/>
             <arg path="./${dir.build.tools}/${tool.htmlcompressor}"/>
             <arg value="--preserve-comments"/>
@@ -599,6 +616,8 @@
             <mapper type="glob" from="*" to="../${dir.publish}/*"/>
             <targetfile/>
         </apply>
+		<copy file="./${dir.intermediate}/top.php" todir="./${dir.publish}/"/>
+		<copy file="./${dir.intermediate}/bottom.php" todir="./${dir.publish}/"/>
     </target>
     
     
@@ -608,7 +627,10 @@
         <echo message=" - removing html comments"/>
         <echo message=" - compressing inline style/script tag contents"/>
         <apply executable="java" parallel="false" dest="./${dir.publish}/" >
-            <fileset dir="./${dir.intermediate}/" includes="${page-files}"/>
+            <fileset dir="./${dir.intermediate}/" includes="${page-files}">
+        		<exclude name="**/top.php"/>
+        		<exclude name="**/bottom.php"/>
+            </fileset>
             <arg value="-jar"/>
             <arg path="./${dir.build.tools}/${tool.htmlcompressor}"/>
             <arg line="--remove-quotes"/>
@@ -620,6 +642,8 @@
             <mapper type="glob" from="*" to="../${dir.publish}/*"/>
             <targetfile/>
         </apply>
+		<copy file="./${dir.intermediate}/top.php" todir="./${dir.publish}/"/>
+		<copy file="./${dir.intermediate}/bottom.php" todir="./${dir.publish}/"/>
     </target>
 
 
@@ -629,13 +653,17 @@
         
         <!-- overwrite=no here means not to overwrite if the target is newer than the sources -->
         <concat destfile="./${dir.intermediate}/${dir.css}/style-concat.css" overwrite="no">
-            <filelist dir="./${dir.source}/${dir.css}" files="${stylesheet-files}"/>
+            <filelist dir="./${dir.source}/${dir.css}" files="${stylesheet-files}"/>          	
         </concat>
         
-        <echo message="Minifying css..."/>
+        <copy file="./${dir.source}/${dir.css}/wordpress.css" tofile="./${dir.intermediate}/${dir.css}/wordpress.css" />
+        <copy file="./${dir.source}/style.css" tofile="./${dir.intermediate}/style.css" />
         
+        <echo message="Minifying css..."/>
         <apply executable="java" parallel="false">
-            <fileset dir="./${dir.intermediate}/${dir.css}/" includes="style-concat.css"/>
+            <fileset dir="./${dir.intermediate}/${dir.css}/" includes="style-concat.css">
+    	  		<exclude name="**/${dir.css}/wordpress.css"/>
+			</fileset>
             <arg line="-jar"/>
             <arg path="./${dir.build.tools}/${tool.yuicompressor}"/>
             <srcfile/>
@@ -643,10 +671,25 @@
             <mapper type="merge" to="${basedir}/${dir.intermediate}/${dir.css}/style-concat.min.css"/>
             <targetfile/>
         </apply>
-
+        <apply executable="java" parallel="false">
+            <fileset dir="./${dir.intermediate}/${dir.css}/" includes="wordpress.css" />
+            <arg line="-jar"/>
+            <arg path="./${dir.build.tools}/${tool.yuicompressor}"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="merge" to="${basedir}/${dir.intermediate}/${dir.css}/wordpress.min.css"/>
+            <targetfile/>
+        </apply>
+        
         <checksum file="${dir.intermediate}/${dir.css}/style-concat.min.css" algorithm="sha" property="css.sha" />
+        <checksum file="${dir.intermediate}/${dir.css}/wordpress.css" algorithm="sha" property="wordpress.css.sha" />
+        
         <property name="style.css" value="${dir.css}/${css.sha}.css" />
+		<property name="wordpress.style.css" value="${dir.css}/${wordpress.css.sha}.css" />
+        
         <copy file="${dir.intermediate}/${dir.css}/style-concat.min.css" tofile="${dir.publish}/${style.css}" />
+		<copy file="${dir.intermediate}/${dir.css}/wordpress.min.css" tofile="${dir.publish}/${wordpress.style.css}"/>
+		<copy file="${dir.intermediate}/style.css" tofile="${dir.publish}/style.css"/>
     </target>
     
     
