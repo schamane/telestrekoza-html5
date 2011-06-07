@@ -269,7 +269,16 @@ h3 { font-size: 1.1em; }
 }
 
 
-/** Skeleton CSS **/
+/**
+ * Skeleton CSS 
+ * Note that URIs that are used in the stylesheet are relative to the stylesheet, not the page that 
+ * references the stylesheet. You need only specify this relative directory in the CSS, like so:
+ *	
+ *	h1 {
+ *		background-image: url(img/my-background.jpg);
+ *	}
+ *	
+ */
 	
 #header-container
 {
