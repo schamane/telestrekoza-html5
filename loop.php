@@ -1,7 +1,7 @@
 <section role='main'>
 <?php while (have_posts()){ the_post(); ?>
     <article id='post-<?php the_ID(); ?>' role='article'>
-		<div class='post'>
+		<div <?php post_class(); ?>>
 		    <header>
 				<div class='post-header'>
 				    <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
