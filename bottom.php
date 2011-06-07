@@ -1,3 +1,6 @@
+
+			<footer>Powered by <a href="http://vears.net/boilerplate" title="HTML5 Boilerplate (WordPress remix)">The HTML5 Boilerplate (WordPress remix)</a></footer>
+    
 		</div>
 	</div> <!--! end of #container -->
 
@@ -32,5 +35,10 @@
 		    s.parentNode.insertBefore(g,s)}(document,"script"));
 		</script>
 	<?php } ?>
+    
+    <!-- http://codex.wordpress.org/Function_Reference/wp_footer
+    	Put this template tag immediately before </body> tag in a theme template -->
+    <?php wp_footer(); ?>
+    
 </body>
 </html>
