@@ -95,6 +95,8 @@
 	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-1.7.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/libs/respond.min.js"></script>
 
+	<?php wp_head(); ?>
+
 </head>
 <body>
 	<div id="container">
