@@ -32,6 +32,11 @@ ul, ol {
 #main, #header-container {
 	padding-left: 18.000px;
 }
+#footer {
+	clear: both;
+	margin-top: 34.033px;
+	margin-bottom: 34.033px;
+}
 #content-container, #comments-container {
 	margin-top: 34.033px;
 	margin-bottom: 34.033px;
