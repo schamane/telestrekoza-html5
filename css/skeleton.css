@@ -1,0 +1,88 @@
+/**
+ * Skeleton CSS 
+ * Note that URIs that are used in the stylesheet are relative to the stylesheet, not the page that 
+ * references the stylesheet. You need only specify this relative directory in the CSS, like so:
+ *	
+ *	h1 {
+ *		background-image: url(img/my-background.jpg);
+ *	}
+ *	
+ */
+	
+#header-container
+{
+
+}
+
+#left-header
+{
+	
+}
+
+#right-header
+{
+	
+}
+#top-nav-container
+{
+	
+}
+
+#top-pagination
+{
+	
+}
+
+#nav-menu
+{
+	
+}
+
+#search-form
+{
+
+}
+
+#search-results 
+{
+	
+}
+
+
+#content-container
+{
+	
+}
+
+
+#left-column
+{
+	
+}
+
+#right-column
+{
+	
+}
+
+.post-header
+{
+
+}
+
+.post-content
+{
+
+}
+
+.post-footer
+{
+	
+}
+
+
+/* pictures in posts */
+.caption 
+{
+
+}

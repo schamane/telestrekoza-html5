@@ -45,7 +45,7 @@
 
 	<!-- CSS: implied media="all" -->  
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
-	
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/skeleton.css">
 
 	<?php
 		// You can disable the included style quickly from the settings page,
