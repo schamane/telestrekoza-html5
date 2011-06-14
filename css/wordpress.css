@@ -126,12 +126,10 @@ ul, ol {
 	color: #888;
 }
  
-.post-content p, .post-content ul, .post-content ol, .comment-body p
+.post-content p, .post-content ul, .post-content ol, .comment-body p, #commentform p
 {
-/*    line-height: 1.618em; */
     margin: 1em 0;
     padding: 0;
-/*    font-size: 1.385em; */
     line-height: 1.385em;
 }
 .post-content ul, .post-content ol
