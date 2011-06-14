@@ -73,11 +73,10 @@ pre, code, kbd, samp { font-family: monospace, sans-serif; }
    2) Remove iOS text size adjust without disabling user zoom: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
   
-/* j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; }
+
 
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
-a:hover, a:active { outline: none; }
+a:hover, a:active { outline: 0; }
 
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
@@ -146,43 +145,21 @@ body, select, input, textarea {
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
-h1, h2, h3, h4, h5, h6 
-{ 
-    font-weight: bold; 
-}
-
-h1 { font-size: 1.3em; }
-h2 { font-size: 1.2em; }
-h3 { font-size: 1.1em; }
-
-
-
-
-
-
-
-
-
-	
-	
-
-
-
-
-
-
-
-
-
-
-
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 /* These selection declarations have to be separate
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink! */
 ::-moz-selection { background: #fe57a1; color:#fff; text-shadow: none; }
 ::selection { background:#fe57a1; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #FF5E99; } /* j.mp/webkit-tap-highlight-color */
 
+
+/**
+ * Primary styles
+ *
+ * Author: 
+ */
 
 
 
@@ -232,18 +209,17 @@ h3 { font-size: 1.1em; }
 /**
  * Placeholder media queries for responsive design. Modify as design requires.
  * These follow after, and will override, the primary ('mobile first') styles
- * The closing /mediaquery comment is required by respond.js min/max-width Media Query polyfill
  */
 
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
 
-}/*/mediaquery*/
+}
 
 @media only screen and (min-width: 768px) {
   /* Style adjustments for viewports 768px and over go here */
 
-}/*/mediaquery*/
+}
 
 
 
@@ -265,99 +241,5 @@ h3 { font-size: 1.1em; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; }
 }
-
-
-/**
- * Skeleton CSS 
- * Note that URIs that are used in the stylesheet are relative to the stylesheet, not the page that 
- * references the stylesheet. You need only specify this relative directory in the CSS, like so:
- *	
- *	h1 {
- *		background-image: url(img/my-background.jpg);
- *	}
- *	
- */
-	
-#header-container
-{
-	
-}
-
-#left-header
-{
-	
-}
-
-#right-header
-{
-	
-}
-#top-nav-container
-{
-	
-}
-
-#top-pagination
-{
-	
-}
-
-#nav-menu
-{
-	
-}
-
-#search-form
-{
-
-}
-
-#search-results 
-{
-	
-}
-
-
-#content-container
-{
-	
-}
-
-
-#left-column
-{
-	
-}
-
-#right-column
-{
-	
-}
-
-.post-header
-{
-
-}
-
-.post-content
-{
-
-}
-
-.post-footer
-{
-	
-}
-
-
-/* pictures in posts */
-.caption 
-{
-
-}
-
-
-
-

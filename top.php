@@ -92,7 +92,7 @@
   
 	<!-- All JavaScript at the bottom, except for Modernizr and Respond.
 		 Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
-	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-1.7.min.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.0.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/libs/respond.min.js"></script>
 
 	<!-- Always have wp_head() just before the closing </head> tag of your theme, or you will break many plugins. -->
