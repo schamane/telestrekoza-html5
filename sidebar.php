@@ -1,5 +1,5 @@
 	<aside>
-		<section role='navigation'>
+		<section id='dynamic-sidebar' role='navigation'>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 			<?php endif; ?>
 		</section>

@@ -8,80 +8,109 @@
  *	}
  *	
  */
+
+
+/* Body classes */
+.home {}
+.blog {}
+.single {}
+.category {}
+.archive {}
+.date {}
+
+
+/* Structural IDs and classes */
+#container
+{
+}
+
+	#header-container
+	{
+	}
+		#left-header
+		{
+		}
+		
+		#right-header
+		{
+		}
+
+			#searchform
+			{
+			}
+
+		#top-nav-container
+		{
+		}
+		
+			#nav-menu
+			{
+			}
+		
+			#top-pagination
+			{
+			}
+		
+	#main 
+	{
+	}
+
+		#content-container
+		{
+		}
+		
+			#left-column
+			{
+			}
+			
+				.post 
+				{
+				}
+			
+					.post-header 
+					{
+					}
+			
+					.post-content
+					{
+					}
+					
+					.post-footer 
+					{
+					}
+				
+				#comments-container
+				{
+				}
+				
+					.commentlist
+					{
+					}
+				
+					#respond
+					{
+					}
+		
+			
+			#right-column
+			{
+			}
+			
+				#dynamic-sidebar
+				{
+				}
+				
+				#integration
+				{
+				}
+				
+
+		#footer
+		{
+		}
 	
-#header-container
-{
 
-}
-
-#left-header
-{
-	
-}
-
-#right-header
-{
-	
-}
-#top-nav-container
-{
-	
-}
-
-#top-pagination
-{
-	
-}
-
-#nav-menu
-{
-	
-}
-
-#search-form
-{
-
-}
-
-#search-results 
-{
-	
-}
-
-
-#content-container
-{
-	
-}
-
-
-#left-column
-{
-	
-}
-
-#right-column
-{
-	
-}
-
-.post-header
-{
-
-}
-
-.post-content
-{
-
-}
-
-.post-footer
-{
-	
-}
-
-
-/* pictures in posts */
+/* Pictures in posts */
 .caption 
 {
 

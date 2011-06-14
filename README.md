@@ -29,10 +29,11 @@ For project updates, read the <a href="http://vears.net/boilerplate/">blog</a>
 * Skeleton CSS document ready for you to customize.
 * Clean, self-documenting code. (In PHP, no less!)
 * Universal device and browser support. 
-* Supports Wordpress' Widget system.
-* Hooked into WordPress' administration system. 
 * ARIA roles included for accessibility.
-* Open Graph protocol included for social network integration.
+* WordPress widgets
+* WordPress administration menus
+* Open Graph
+* Gravatar 
 
 ## What else is there?
 
