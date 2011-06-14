@@ -126,7 +126,7 @@ ul, ol {
 	color: #888;
 }
  
-.post-content p, .post-content ul, .post-content ol
+.post-content p, .post-content ul, .post-content ol, .comment-body p
 {
 /*    line-height: 1.618em; */
     margin: 1em 0;
