@@ -95,6 +95,7 @@
 	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-1.7.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/libs/respond.min.js"></script>
 
+	<!-- Always have wp_head() just before the closing </head> tag of your theme, or you will break many plugins. -->
 	<?php wp_head(); ?>
 
 </head>
@@ -103,28 +104,28 @@
 		<section>
 		    <nav id="breadcrumbs"></nav>
 
-			<div id='header-container'>
-				<div id='left-header'>
-					<hgroup role='banner'>
+			<div id="header-container">
+				<div id="left-header">
+					<hgroup role="banner">
 						<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 						<h2><?php bloginfo('description'); ?></h2>
 					</hgroup>
 				</div>
 		
-				<div id='right-header'>
-					<section role='search'>
+				<div id="right-header">
+					<section role="search">
 			        	<?php get_search_form(); ?>
-			        </section>
+					</section>
 				</div>
 				
-		 		<div id='top-nav-container' class='clearfix'>
-					<section role='menubar'>
-						<div id='nav-menu'>
-							<?php wp_nav_menu(); ?>
+		 		<div id="top-nav-container" class="clearfix">
+					<section role="menubar">
+						<div id="nav-menu">
+						  <?php wp_nav_menu(); ?>
 						</div>	
 					</section>	
-					<nav role='navigation'>
-						<div id='top-pagination'>
+					<nav role="navigation">
+						<div id="top-pagination">
 						    <?php next_posts_link('&laquo; Previous Page') ?>
 						    <?php previous_posts_link('Next Page &raquo;') ?>
 						</div>

@@ -1,7 +1,7 @@
 
 			<div id="footer">
 				<footer>Powered by <a href="http://vears.net/boilerplate" title="HTML5 Boilerplate (WordPress remix)">The HTML5 Boilerplate (WordPress remix)</a></footer>
-    		</div>
+    			</div>
 		</div>
 	</div> <!--! end of #container -->
 

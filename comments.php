@@ -1,13 +1,14 @@
-<div id='comments-container'>
+<div id="comments-container">
 	<section>
 		<header>
 			<h1>Comments</h1>
 		</header>
 
 		<?php if ( have_comments() ) : ?>
-			<?php
-	        printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number() ),
-	        number_format_i18n( get_comments_number() ), '<cite>' . get_the_title() . '</cite>' );
+
+		<?php
+			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number() ),
+	        	number_format_i18n( get_comments_number() ), '<cite>' . get_the_title() . '</cite>' );
 	        ?>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -40,12 +41,5 @@
 		<?php endif; // end have_comments() ?>
 		
 		<?php comment_form(); ?>
-
-
-	
-
-
-
-
 	</section>
 </div>
