@@ -101,14 +101,17 @@ ul, ol {
 
 
 
-/* comment form */
+/* comments */
 #respond { 
 	margin-top: 18px;
 }
 #commentform p input, #commentform p textarea {
 	display: block;	
 }
-
+.comment-author .avatar {
+	float: left;
+	padding-right: 13.000px;
+}
 
 /* text styles */
 .post blockquote {
