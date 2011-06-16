@@ -9,7 +9,10 @@ function theme_options_init(){
 	
 	add_settings_section('display_section', 'Display Settings', 'display_section_text', 'theme_options');
 	add_settings_field('disable_layout', 'Disable default style', 'disable_layout_setting', 'theme_options', 'display_section');
-	add_settings_field('css_font_stack', 'Font style', 'font_setting', 'theme_options', 'display_section');
+	add_settings_field('css_font_stack', 'Base font style', 'font_setting', 'theme_options', 'display_section');
+	
+	add_settings_field('google_web_font_header', '<a href="http://www.google.com/webfonts" target=_blank>Google Web Font</a> for header text', 'google_web_font_header_setting', 'theme_options', 'display_section');
+	add_settings_field('google_web_font_paragraph', '<a href="http://www.google.com/webfonts" target=_blank>Google Web Font</a> for paragraph text', 'google_web_font_paragraph_setting', 'theme_options', 'display_section');
 
 	add_settings_section('media_section', 'Media Settings', 'media_section_text', 'theme_options');
 	add_settings_field('yahoo_media_player', 'Yahoo Media Player', 'yahoo_media_player_setting', 'theme_options', 'media_section');
@@ -101,12 +104,32 @@ function  facebook_integration_section_text() {
 
 
 function font_setting() {
+	echo "<style>";
+	echo " .font-option { line-height: 1.618em; }";
+	echo " .Microsoft { font-family: \"Segoe UI\", Segoe, Tahoma, Geneva, sans-serif; font-size: 1.618em; }";
+	echo " .Facebook { font-family: \"Lucida Grande\", \"Lucida Sans Unicode\", \"Lucida Sans\", Verdana, Tahoma, sans-serif; font-size: 1.618em;}";
+	echo " .Yahoo { font-family: Arial, sans-serif; font-size: 1.618em; }";
+	echo " .ILoveTypography { font-family: Cambria, Georgia, serif; font-size: 1.618em; }";
+	echo " .JonTangerine { font-family: Baskerville, Garamond, Palatino, \"Palatino Linotype\", \"Hoefler Text\", \"Times New Roman\", serif; font-size: 1.618em; }";	
+	echo " .SushiAndRobots { font-family: \"Hoefler Text\", Garamond, Baskerville, \"Baskerville Old Face\", \"Times New Roman\", serif; font-size: 1.618em; }";
+	echo "</style>";
+			
 	$options = get_option('theme_options');
-	$items = array("Microsoft", "Yahoo", "Facebook", "I Love Typography", "Jon Tangerine", "Sushi & Robots");
+	$items = array("Microsoft", "Yahoo", "Facebook", "I Love Typography", "Jon Tangerine", "Sushi And Robots");
 	foreach($items as $item) {
+		$class = str_replace(" ", "", $item);
 		$checked = ($options['css_font_stack']==$item) ? ' checked="checked" ' : '';
-		echo "<label><input ".$checked." value='$item' name='theme_options[css_font_stack]' type='radio' /> $item</label><br />";
+		echo "<label class=\"font-option ".$class."\"><input ".$checked." value='$item' name='theme_options[css_font_stack]' type='radio' /> $item</label><br />";
 	}
+	
+}
+function google_web_font_header_setting() {
+	$options = get_option('theme_options');
+	echo "<input id='google_web_font_header' name='theme_options[google_web_font_header]' size='40' type='text' value='{$options['google_web_font_header']}' />";
+}
+function google_web_font_paragraph_setting() {
+	$options = get_option('theme_options');
+	echo "<input id='google_web_font_paragraph' name='theme_options[google_web_font_paragraph]' size='40' type='text' value='{$options['google_web_font_paragraph']}' />";
 }
 function ga_tracker_setting() {
 	$options = get_option('theme_options');
