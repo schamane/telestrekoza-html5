@@ -37,14 +37,19 @@ For project updates, read the <a href="http://vears.net/boilerplate/">blog</a>
 
 ## What else is there?
 
-jQuery, Google Analytics, Modernizr, QUnit, Chrome Frame, Yahoo Media Player, etc.
+jQuery, Google Analytics, Google Web Fonts, Modernizr, QUnit, Chrome Frame, Yahoo Media Player, etc.
 
 ## Configuration options
 
-Configuratble options for this theme are under the *Settings* tab in the Wordpress Administration area.
+Configurable options for this theme are under the *Settings* tab in the Wordpress Administration area.
 
+* _Disable default style_ If you want to start from scratch.
 * _Font style_ Options from Nathan Ford's [Revised Font Stacks](http://www.awayback.com/revised-font-stack/)  
+* _Google Web Font for header text_ and _Google Web Font for paragraph text_
 * _Google Analytics tracker ID_ Automatic Google Analytics integration.
+* _Yahoo Media Player_ for streaming posted media.
+* _Facebook profile ID_ for Open Graph integration.
+
 
 Providing any of these will create a link on your blog's sidebar:
 
