@@ -9,11 +9,7 @@ if ( function_exists('register_sidebar') )
         'after_title' => '</h3>',
     ));
 	
-
-
-
-
-
+add_custom_background();
 
 // Theme options:
 require_once ( get_stylesheet_directory() . '/options.php' );	
